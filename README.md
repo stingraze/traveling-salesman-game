@@ -3,6 +3,8 @@
 A Traveling Salesman Problem game where humans compete against bots.
 Flask backend with a JSON file database; vanilla JS frontend.
 
+(C)Tsubasa Kato - Inspire Search Corp. & Curioforce Corp. - 2026/2/6 18:27PM - Created with the help of Perplexity Max.
+
 ## Quick Start
 
 ```bash
