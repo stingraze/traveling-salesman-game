@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>TSP Game</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>🗺️ Traveling Salesman Game</h1>
+    <p class="sub">Click the canvas to place cities · Save the game · Build your route or let bots compete</p>
+  </header>
+
+  <main>
+    <section class="game-panel">
+      <div class="toolbar">
+        <input id="gameName"   type="text" placeholder="Game name…" value="My Game"/>
+        <input id="playerName" type="text" placeholder="Your name…" value="Player 1"/>
+        <button id="btnSave"   title="Save cities to server">💾 Save Game</button>
+        <button id="btnClear">🗑️ Clear All</button>
+        <button id="btnUndo">↩️ Undo Hop</button>
+        <button id="btnFinish" disabled>✅ Submit Route</button>
+      </div>
+
+      <canvas id="canvas" width="700" height="500"></canvas>
+
+      <div class="toolbar bot-bar">
+        <span>🤖 Bots:</span>
+        <button class="bot" data-bot="greedy">Greedy</button>
+        <button class="bot" data-bot="nearest">Nearest Nbr</button>
+        <button class="bot" data-bot="2opt">2-Opt</button>
+        <button class="bot" data-bot="random">Random</button>
+      </div>
+      <div id="status" class="status">Place at least 3 cities, then save the game.</div>
+    </section>
+
+    <aside class="score-panel">
+      <h2>🏆 High Scores</h2>
+      <p class="sort-hint">Sorted by: cities (most first), then shortest distance</p>
+      <div class="filters">
+        <select id="fScope"><option value="global">Global</option><option value="per_game">Per Game</option></select>
+        <select id="fAgent">
+          <option value="">All</option>
+          <option value="human">Human</option>
+          <option value="bot-greedy">Greedy</option>
+          <option value="bot-nearest">Nearest</option>
+          <option value="bot-2opt">2-Opt</option>
+          <option value="bot-random">Random</option>
+        </select>
+        <button id="btnScores">🔄</button>
+      </div>
+      <table id="scores">
+        <thead>
+          <tr><th>#</th><th>Player</th><th>Type</th><th>Cities</th><th>Distance</th><th>ms</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h2>📂 Saved Games</h2>
+      <ul id="gameList"></ul>
+      <div class="export"><a id="linkExport" href="/api/export/json" target="_blank">⬇️ Export full DB as JSON</a></div>
+    </aside>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
