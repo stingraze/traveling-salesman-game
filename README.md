@@ -3,6 +3,8 @@
 A Traveling Salesman Problem game where humans compete against bots.
 Flask backend with a JSON file database; vanilla JS frontend.
 
+![Traveling Salesman Game Screenshot]([image-url](https://github.com/stingraze/traveling-salesman-game/blob/main/traveling-salesman-game-screenshot.jpg))
+
 (C)Tsubasa Kato - Inspire Search Corp. & Curioforce Corp. - 2026/2/6 18:27PM - Created with the help of Perplexity Max.
 
 ## Quick Start
